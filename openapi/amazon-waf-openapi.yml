@@ -1,0 +1,274 @@
+openapi: 3.1.0
+info:
+  title: Amazon WAF API
+  description: >-
+    AWS WAF is a web application firewall that helps protect web applications
+    and APIs against common web exploits and bots. The API provides operations
+    for managing web ACLs, rule groups, IP sets, regex pattern sets, and
+    logging configurations.
+  version: '2019-07-29'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/waf/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+externalDocs:
+  description: AWS WAF API Reference
+  url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+servers:
+  - url: https://wafv2.{region}.amazonaws.com
+    description: AWS WAF regional endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS region
+        enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - eu-west-1
+          - eu-west-2
+          - eu-central-1
+          - ap-northeast-1
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-south-1
+          - ca-central-1
+paths:
+  /#CreateWebACL:
+    post:
+      operationId: CreateWebACL
+      summary: Create a web ACL
+      description: >-
+        Creates a web ACL with the specified rules and default action for
+        managing web traffic.
+      tags:
+        - Web ACLs
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - Name
+                - Scope
+                - DefaultAction
+                - VisibilityConfig
+              properties:
+                Name:
+                  type: string
+                  description: The name of the web ACL.
+                Scope:
+                  type: string
+                  enum:
+                    - CLOUDFRONT
+                    - REGIONAL
+                DefaultAction:
+                  type: object
+                  properties:
+                    Allow:
+                      type: object
+                    Block:
+                      type: object
+                Rules:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Rule'
+                VisibilityConfig:
+                  $ref: '#/components/schemas/VisibilityConfig'
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Summary:
+                    $ref: '#/components/schemas/WebACLSummary'
+  /#GetWebACL:
+    post:
+      operationId: GetWebACL
+      summary: Get a web ACL
+      description: Retrieves the specified web ACL.
+      tags:
+        - Web ACLs
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - Name
+                - Scope
+                - Id
+              properties:
+                Name:
+                  type: string
+                Scope:
+                  type: string
+                Id:
+                  type: string
+      responses:
+        '200':
+          description: Successful response.
+  /#ListWebACLs:
+    post:
+      operationId: ListWebACLs
+      summary: List web ACLs
+      description: Retrieves a list of web ACLs.
+      tags:
+        - Web ACLs
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - Scope
+              properties:
+                Scope:
+                  type: string
+                Limit:
+                  type: integer
+                NextMarker:
+                  type: string
+      responses:
+        '200':
+          description: Successful response.
+  /#CreateIPSet:
+    post:
+      operationId: CreateIPSet
+      summary: Create an IP set
+      description: Creates an IP set for use in web ACL rules.
+      tags:
+        - IP Sets
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - Name
+                - Scope
+                - IPAddressVersion
+                - Addresses
+              properties:
+                Name:
+                  type: string
+                Scope:
+                  type: string
+                IPAddressVersion:
+                  type: string
+                  enum:
+                    - IPV4
+                    - IPV6
+                Addresses:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successful response.
+  /#CreateRuleGroup:
+    post:
+      operationId: CreateRuleGroup
+      summary: Create a rule group
+      description: Creates a rule group with the specified rules.
+      tags:
+        - Rule Groups
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+                - Name
+                - Scope
+                - Capacity
+                - VisibilityConfig
+              properties:
+                Name:
+                  type: string
+                Scope:
+                  type: string
+                Capacity:
+                  type: integer
+                Rules:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Rule'
+                VisibilityConfig:
+                  $ref: '#/components/schemas/VisibilityConfig'
+      responses:
+        '200':
+          description: Successful response.
+components:
+  schemas:
+    Rule:
+      type: object
+      properties:
+        Name:
+          type: string
+        Priority:
+          type: integer
+        Action:
+          type: object
+        VisibilityConfig:
+          $ref: '#/components/schemas/VisibilityConfig'
+      required:
+        - Name
+        - Priority
+        - VisibilityConfig
+    VisibilityConfig:
+      type: object
+      properties:
+        SampledRequestsEnabled:
+          type: boolean
+        CloudWatchMetricsEnabled:
+          type: boolean
+        MetricName:
+          type: string
+      required:
+        - SampledRequestsEnabled
+        - CloudWatchMetricsEnabled
+        - MetricName
+    WebACLSummary:
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: string
+        ARN:
+          type: string
+        LockToken:
+          type: string
+    Tag:
+      type: object
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string
+      required:
+        - Key
+        - Value
+  securitySchemes:
+    aws_sig_v4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication.
+security:
+  - aws_sig_v4: []

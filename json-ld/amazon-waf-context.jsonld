@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "waf": "https://docs.aws.amazon.com/waf/latest/APIReference/",
+    "aws": "https://aws.amazon.com/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "identifier": "schema:identifier",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "status": "schema:status",
+    "provider": {
+      "@id": "schema:provider",
+      "@type": "schema:Organization"
+    },
+    "WebACL": {
+      "@id": "waf:API_CreateWebACL.html",
+      "@context": {
+        "Name": "schema:name",
+        "Id": "schema:identifier",
+        "ARN": "schema:identifier",
+        "Description": "schema:description",
+        "DefaultAction": "waf:DefaultAction",
+        "Rules": "waf:Rules",
+        "Capacity": "waf:Capacity"
+      }
+    },
+    "RuleGroup": {
+      "@id": "waf:API_CreateRuleGroup.html",
+      "@context": {
+        "Name": "schema:name",
+        "Id": "schema:identifier",
+        "ARN": "schema:identifier",
+        "Description": "schema:description",
+        "Capacity": "waf:Capacity",
+        "Rules": "waf:Rules"
+      }
+    },
+    "IPSet": {
+      "@id": "waf:API_CreateIPSet.html",
+      "@context": {
+        "Name": "schema:name",
+        "Id": "schema:identifier",
+        "ARN": "schema:identifier",
+        "Description": "schema:description",
+        "IPAddressVersion": "waf:IPAddressVersion",
+        "Addresses": "waf:Addresses"
+      }
+    },
+    "Tag": {
+      "@id": "waf:Tag",
+      "@context": {
+        "Key": "schema:name",
+        "Value": "schema:value"
+      }
+    }
+  }
+}
