@@ -1,4 +1,4 @@
-name: Amazon WAF API
+name: Amazon WAF
 description: AWS WAF is a web application firewall that helps protect web applications and APIs from common web exploits and bots that may affect availability, compromise security, or consume excessive resources.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/waf/
