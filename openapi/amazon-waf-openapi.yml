@@ -43,7 +43,7 @@ paths:
   /#CreateWebACL:
     post:
       operationId: CreateWebACL
-      summary: Create a web ACL
+      summary: Amazon WAF Create a web ACL
       description: >-
         Creates a web ACL with the specified rules and default action for
         managing web traffic.
@@ -95,7 +95,7 @@ paths:
   /#GetWebACL:
     post:
       operationId: GetWebACL
-      summary: Get a web ACL
+      summary: Amazon WAF Get a web ACL
       description: Retrieves the specified web ACL.
       tags:
         - Web ACLs
@@ -122,7 +122,7 @@ paths:
   /#ListWebACLs:
     post:
       operationId: ListWebACLs
-      summary: List web ACLs
+      summary: Amazon WAF List web ACLs
       description: Retrieves a list of web ACLs.
       tags:
         - Web ACLs
@@ -147,7 +147,7 @@ paths:
   /#CreateIPSet:
     post:
       operationId: CreateIPSet
-      summary: Create an IP set
+      summary: Amazon WAF Create an IP set
       description: Creates an IP set for use in web ACL rules.
       tags:
         - IP Sets
@@ -182,7 +182,7 @@ paths:
   /#CreateRuleGroup:
     post:
       operationId: CreateRuleGroup
-      summary: Create a rule group
+      summary: Amazon WAF Create a rule group
       description: Creates a rule group with the specified rules.
       tags:
         - Rule Groups
