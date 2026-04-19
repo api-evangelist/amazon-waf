@@ -1,0 +1,31 @@
+{
+  "name": "WebACLSummary",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "Id",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "ARN",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "LockToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

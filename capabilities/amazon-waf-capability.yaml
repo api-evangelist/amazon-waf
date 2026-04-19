@@ -1,0 +1,7 @@
+id: amazon-waf-capability
+name: Amazon WAF Capability
+description: Workflow-oriented capability for Amazon WAF
+tags:
+- AWS
+consumes:
+- ref: capabilities/shared/amazon-waf-shared.yaml

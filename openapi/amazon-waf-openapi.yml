@@ -20,35 +20,35 @@ externalDocs:
   description: AWS WAF API Reference
   url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
 servers:
-  - url: https://wafv2.{region}.amazonaws.com
-    description: AWS WAF regional endpoint
-    variables:
-      region:
-        default: us-east-1
-        description: AWS region
-        enum:
-          - us-east-1
-          - us-east-2
-          - us-west-1
-          - us-west-2
-          - eu-west-1
-          - eu-west-2
-          - eu-central-1
-          - ap-northeast-1
-          - ap-southeast-1
-          - ap-southeast-2
-          - ap-south-1
-          - ca-central-1
+- url: https://wafv2.{region}.amazonaws.com
+  description: AWS WAF regional endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+      - ap-northeast-1
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-south-1
+      - ca-central-1
 paths:
   /#CreateWebACL:
     post:
       operationId: CreateWebACL
-      summary: Amazon WAF Create a web ACL
+      summary: Amazon WAF Create a Web ACL
       description: >-
         Creates a web ACL with the specified rules and default action for
         managing web traffic.
       tags:
-        - Web ACLs
+      - Web ACLs
       requestBody:
         required: true
         content:
@@ -56,10 +56,10 @@ paths:
             schema:
               type: object
               required:
-                - Name
-                - Scope
-                - DefaultAction
-                - VisibilityConfig
+              - Name
+              - Scope
+              - DefaultAction
+              - VisibilityConfig
               properties:
                 Name:
                   type: string
@@ -67,8 +67,8 @@ paths:
                 Scope:
                   type: string
                   enum:
-                    - CLOUDFRONT
-                    - REGIONAL
+                  - CLOUDFRONT
+                  - REGIONAL
                 DefaultAction:
                   type: object
                   properties:
@@ -92,13 +92,16 @@ paths:
                 properties:
                   Summary:
                     $ref: '#/components/schemas/WebACLSummary'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#GetWebACL:
     post:
       operationId: GetWebACL
-      summary: Amazon WAF Get a web ACL
+      summary: Amazon WAF Get a Web ACL
       description: Retrieves the specified web ACL.
       tags:
-        - Web ACLs
+      - Web ACLs
       requestBody:
         required: true
         content:
@@ -106,9 +109,9 @@ paths:
             schema:
               type: object
               required:
-                - Name
-                - Scope
-                - Id
+              - Name
+              - Scope
+              - Id
               properties:
                 Name:
                   type: string
@@ -119,13 +122,16 @@ paths:
       responses:
         '200':
           description: Successful response.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#ListWebACLs:
     post:
       operationId: ListWebACLs
-      summary: Amazon WAF List web ACLs
+      summary: Amazon WAF List Web ACLs
       description: Retrieves a list of web ACLs.
       tags:
-        - Web ACLs
+      - Web ACLs
       requestBody:
         required: true
         content:
@@ -133,7 +139,7 @@ paths:
             schema:
               type: object
               required:
-                - Scope
+              - Scope
               properties:
                 Scope:
                   type: string
@@ -144,13 +150,16 @@ paths:
       responses:
         '200':
           description: Successful response.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#CreateIPSet:
     post:
       operationId: CreateIPSet
-      summary: Amazon WAF Create an IP set
+      summary: Amazon WAF Create an IP Set
       description: Creates an IP set for use in web ACL rules.
       tags:
-        - IP Sets
+      - IP Sets
       requestBody:
         required: true
         content:
@@ -158,10 +167,10 @@ paths:
             schema:
               type: object
               required:
-                - Name
-                - Scope
-                - IPAddressVersion
-                - Addresses
+              - Name
+              - Scope
+              - IPAddressVersion
+              - Addresses
               properties:
                 Name:
                   type: string
@@ -170,8 +179,8 @@ paths:
                 IPAddressVersion:
                   type: string
                   enum:
-                    - IPV4
-                    - IPV6
+                  - IPV4
+                  - IPV6
                 Addresses:
                   type: array
                   items:
@@ -179,13 +188,16 @@ paths:
       responses:
         '200':
           description: Successful response.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#CreateRuleGroup:
     post:
       operationId: CreateRuleGroup
-      summary: Amazon WAF Create a rule group
+      summary: Amazon WAF Create a Rule Group
       description: Creates a rule group with the specified rules.
       tags:
-        - Rule Groups
+      - Rule Groups
       requestBody:
         required: true
         content:
@@ -193,10 +205,10 @@ paths:
             schema:
               type: object
               required:
-                - Name
-                - Scope
-                - Capacity
-                - VisibilityConfig
+              - Name
+              - Scope
+              - Capacity
+              - VisibilityConfig
               properties:
                 Name:
                   type: string
@@ -213,6 +225,9 @@ paths:
       responses:
         '200':
           description: Successful response.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
   schemas:
     Rule:
@@ -227,9 +242,9 @@ components:
         VisibilityConfig:
           $ref: '#/components/schemas/VisibilityConfig'
       required:
-        - Name
-        - Priority
-        - VisibilityConfig
+      - Name
+      - Priority
+      - VisibilityConfig
     VisibilityConfig:
       type: object
       properties:
@@ -240,9 +255,9 @@ components:
         MetricName:
           type: string
       required:
-        - SampledRequestsEnabled
-        - CloudWatchMetricsEnabled
-        - MetricName
+      - SampledRequestsEnabled
+      - CloudWatchMetricsEnabled
+      - MetricName
     WebACLSummary:
       type: object
       properties:
@@ -262,8 +277,8 @@ components:
         Value:
           type: string
       required:
-        - Key
-        - Value
+      - Key
+      - Value
   securitySchemes:
     aws_sig_v4:
       type: apiKey
@@ -271,8 +286,8 @@ components:
       in: header
       description: AWS Signature Version 4 authentication.
 security:
-  - aws_sig_v4: []
+- aws_sig_v4: []
 tags:
-  - name: IP Sets
-  - name: Rule Groups
-  - name: Web ACLs
+- name: IP Sets
+- name: Rule Groups
+- name: Web ACLs

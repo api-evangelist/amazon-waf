@@ -1,0 +1,25 @@
+{
+  "name": "VisibilityConfig",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "SampledRequestsEnabled",
+      "type": "boolean",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "CloudWatchMetricsEnabled",
+      "type": "boolean",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "MetricName",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

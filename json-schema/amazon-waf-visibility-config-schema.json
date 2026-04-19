@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "SampledRequestsEnabled": {
+      "type": "boolean"
+    },
+    "CloudWatchMetricsEnabled": {
+      "type": "boolean"
+    },
+    "MetricName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "SampledRequestsEnabled",
+    "CloudWatchMetricsEnabled",
+    "MetricName"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisibilityConfig"
+}

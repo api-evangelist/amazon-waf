@@ -1,0 +1,25 @@
+id: amazon-waf
+name: Amazon WAF
+description: Shared capability definition for Amazon WAF
+namespace: amazon-waf
+operations:
+- operationId: CreateWebACL
+  method: POST
+  path: /#CreateWebACL
+  summary: Amazon WAF Create a Web ACL
+- operationId: GetWebACL
+  method: POST
+  path: /#GetWebACL
+  summary: Amazon WAF Get a Web ACL
+- operationId: ListWebACLs
+  method: POST
+  path: /#ListWebACLs
+  summary: Amazon WAF List Web ACLs
+- operationId: CreateIPSet
+  method: POST
+  path: /#CreateIPSet
+  summary: Amazon WAF Create an IP Set
+- operationId: CreateRuleGroup
+  method: POST
+  path: /#CreateRuleGroup
+  summary: Amazon WAF Create a Rule Group

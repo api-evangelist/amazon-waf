@@ -1,0 +1,31 @@
+{
+  "name": "Rule",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "Priority",
+      "type": "integer",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "Action",
+      "type": "object",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "VisibilityConfig",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

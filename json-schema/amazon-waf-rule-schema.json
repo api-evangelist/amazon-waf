@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Priority": {
+      "type": "integer"
+    },
+    "Action": {
+      "type": "object"
+    },
+    "VisibilityConfig": {
+      "$ref": "#/components/schemas/VisibilityConfig"
+    }
+  },
+  "required": [
+    "Name",
+    "Priority",
+    "VisibilityConfig"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Rule"
+}
