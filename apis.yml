@@ -1,13 +1,14 @@
 name: Amazon WAF
-description: AWS WAF is a web application firewall that helps protect web applications and APIs from common web exploits and bots that may affect availability, compromise security, or consume 
-  excessive resources.
+description: AWS WAF is a web application firewall that helps protect web applications and APIs from common web exploits and
+  bots that may affect availability, compromise security, or consume excessive resources.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/waf/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 apis:
 - name: Amazon WAF REST API
-  description: RESTful API for AWS WAF operations including web ACL management, rule groups, IP sets, regex pattern sets, and logging configurations for protecting web applications.
+  description: RESTful API for AWS WAF operations including web ACL management, rule groups, IP sets, regex pattern sets,
+    and logging configurations for protecting web applications.
   image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
   humanURL: https://aws.amazon.com/waf/
   baseURL: https://wafv2.amazonaws.com
@@ -49,6 +50,12 @@ apis:
     url: https://docs.aws.amazon.com/waf/latest/developerguide/waf-examples.html
   - type: Security
     url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
+  - type: NaftikoCapability
+    url: capabilities/amazon-waf-ip-sets.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-waf-rule-groups.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-waf-web-acls.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -86,8 +93,6 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/amazon-waf/refs/heads/main/rules/amazon-waf-spectral-rules.yml
 - type: Vocabulary
   url: https://raw.githubusercontent.com/api-evangelist/amazon-waf/refs/heads/main/vocabulary/amazon-waf-vocabulary.yaml
-- type: NaftikoCapability
-  url: https://raw.githubusercontent.com/api-evangelist/amazon-waf/refs/heads/main/capabilities/amazon-waf-capability.yaml
 - type: Features
   data:
   - name: Automation
@@ -101,14 +106,14 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
