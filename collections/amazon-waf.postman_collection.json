@@ -1,0 +1,573 @@
+{
+  "item": [
+    {
+      "id": "2504c67f-6e4b-4e32-92bf-f7382bf5a505",
+      "name": "IP Sets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e521cac-e289-4f1a-a8c5-989c7c413d06",
+          "name": "Amazon WAF Create an IP Set",
+          "request": {
+            "name": "Amazon WAF Create an IP Set",
+            "description": {
+              "content": "Creates an IP set for use in web ACL rules.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "CreateIPSet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"IPAddressVersion\": \"<string>\",\n  \"Addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "f3660adc-cb4d-4ff8-9042-c672b53bcb91",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateIPSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"IPAddressVersion\": \"<string>\",\n  \"Addresses\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6dd1bd63-13cc-4213-b398-26764bfa880e",
+      "name": "Rule Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "afb41f66-1f54-41ac-9dfa-aa2c5d7b2bd3",
+          "name": "Amazon WAF Create a Rule Group",
+          "request": {
+            "name": "Amazon WAF Create a Rule Group",
+            "description": {
+              "content": "Creates a rule group with the specified rules.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "CreateRuleGroup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Capacity\": \"<integer>\",\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": \"<boolean>\",\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"MetricName\": \"<string>\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": \"<object>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": \"<object>\"\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "6123c3a7-72e2-46de-9ab0-103104169de3",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateRuleGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Capacity\": \"<integer>\",\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": false,\n    \"CloudWatchMetricsEnabled\": false,\n    \"MetricName\": \"string\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"string\",\n      \"Priority\": 7493,\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": true,\n        \"CloudWatchMetricsEnabled\": false,\n        \"MetricName\": \"string\"\n      },\n      \"Action\": {}\n    },\n    {\n      \"Name\": \"string\",\n      \"Priority\": 8871,\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": true,\n        \"CloudWatchMetricsEnabled\": true,\n        \"MetricName\": \"string\"\n      },\n      \"Action\": {}\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1f483a08-a2a4-4022-8a7b-ac5aee76776e",
+      "name": "Web ACLs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff2bdbf5-b10a-4807-b9ad-2975d98f0e4a",
+          "name": "Amazon WAF Create a Web ACL",
+          "request": {
+            "name": "Amazon WAF Create a Web ACL",
+            "description": {
+              "content": "Creates a web ACL with the specified rules and default action for managing web traffic.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "CreateWebACL",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"DefaultAction\": {\n    \"Allow\": \"<object>\",\n    \"Block\": \"<object>\"\n  },\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": \"<boolean>\",\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"MetricName\": \"<string>\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": \"<object>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": \"<object>\"\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "6dc95425-7c80-4ad0-bf0f-9bfafa667935",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateWebACL",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"DefaultAction\": {\n    \"Allow\": \"<object>\",\n    \"Block\": \"<object>\"\n  },\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": true,\n    \"CloudWatchMetricsEnabled\": true,\n    \"MetricName\": \"string\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"string\",\n      \"Priority\": 449,\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": false,\n        \"CloudWatchMetricsEnabled\": true,\n        \"MetricName\": \"string\"\n      },\n      \"Action\": {}\n    },\n    {\n      \"Name\": \"string\",\n      \"Priority\": 4334,\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": true,\n        \"CloudWatchMetricsEnabled\": true,\n        \"MetricName\": \"string\"\n      },\n      \"Action\": {}\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Summary\": {\n    \"Name\": \"string\",\n    \"Id\": \"string\",\n    \"ARN\": \"string\",\n    \"LockToken\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0e7138f-6407-4f2c-be5f-a25557866d12",
+          "name": "Amazon WAF Get a Web ACL",
+          "request": {
+            "name": "Amazon WAF Get a Web ACL",
+            "description": {
+              "content": "Retrieves the specified web ACL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "GetWebACL",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Id\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "e1086dd7-cc9f-48e9-a75a-ad828aa28bd4",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "GetWebACL",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Id\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6130535e-e256-40d1-a1da-d653a0bb55af",
+          "name": "Amazon WAF List Web ACLs",
+          "request": {
+            "name": "Amazon WAF List Web ACLs",
+            "description": {
+              "content": "Retrieves a list of web ACLs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "ListWebACLs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Scope\": \"<string>\",\n  \"Limit\": \"<integer>\",\n  \"NextMarker\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "7067877f-417e-44f4-abe1-f702825c725f",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "ListWebACLs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Scope\": \"<string>\",\n  \"Limit\": \"<integer>\",\n  \"NextMarker\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,ca-central-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "https://wafv2.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f32a918f-53fa-4303-9662-ed667009a1d7",
+    "name": "Amazon WAF API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}
