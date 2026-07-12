@@ -53,6 +53,14 @@ apis:
       - type: Security
         url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
 common:
+  - type: TrustCenter
+    url: security/amazon-waf-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-waf-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-waf-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-waf-authentication.yml
   - type: Portal
     url: https://aws.amazon.com/
   - type: Website
