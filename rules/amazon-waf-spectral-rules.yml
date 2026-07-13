@@ -1,59 +1,122 @@
-extends: spectral:oas
+# amazon-waf — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on amazonaws.com
+#   - operationid-casing: pascal @ 100% (n=5)
+#   - schema-names-casing: pascal @ 100% (n=4)
+#   - schema-properties-casing: pascal @ 92% (n=13)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - merge: kept 8 existing, added 6 measured, upgraded 0
+#   - added: servers-https-only, servers-expected-domain, operationid-casing, schema-names-casing, schema-properties-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   info-title-required:
     description: Info title must be present.
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: title
       function: truthy
   info-description-required:
     description: Info description must be present.
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
   operation-summary-required:
     description: Every operation must have a summary.
     severity: error
-    given: "$.paths[*][*]"
+    given: $.paths[*][*]
     then:
       field: summary
       function: truthy
   operation-summary-prefix:
     description: Operation summaries must start with 'Amazon WAF'.
     severity: warn
-    given: "$.paths[*][*].summary"
+    given: $.paths[*][*].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon WAF"
+        match: ^Amazon WAF
   operation-operationId-required:
     description: Every operation must have an operationId.
     severity: error
-    given: "$.paths[*][*]"
+    given: $.paths[*][*]
     then:
       field: operationId
       function: truthy
   operation-tags-required:
     description: Every operation must have at least one tag.
     severity: warn
-    given: "$.paths[*][*]"
+    given: $.paths[*][*]
     then:
       field: tags
       function: truthy
   parameter-description-required:
     description: Every parameter must have a description.
     severity: warn
-    given: "$.paths[*][*].parameters[*]"
+    given: $.paths[*][*].parameters[*]
     then:
       field: description
       function: truthy
   security-schemes-defined:
     description: Security schemes must be defined.
     severity: warn
-    given: "$.components"
+    given: $.components
     then:
       field: securitySchemes
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the amazonaws.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: amazonaws\.com
+  operationid-casing:
+    description: Operation IDs should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-properties-casing:
+    description: Schema properties should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy
