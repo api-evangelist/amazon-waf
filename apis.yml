@@ -53,6 +53,8 @@ apis:
       - type: Security
         url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-waf-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-waf-trust-center.yml
   - type: VulnerabilityDisclosure
