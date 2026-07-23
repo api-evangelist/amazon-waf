@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Amazon WAF IP Sets Rule Groups API
+  description: AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.
+  version: '2019-07-29'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/waf/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+servers:
+- url: https://wafv2.{region}.amazonaws.com
+  description: AWS WAF regional endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+      - ap-northeast-1
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-south-1
+      - ca-central-1
+security:
+- aws_sig_v4: []
+tags:
+- name: Rule Groups
+paths:
+  /#CreateRuleGroup:
+    post:
+      operationId: CreateRuleGroup
+      summary: Amazon WAF Create a Rule Group
+      description: Creates a rule group with the specified rules.
+      tags:
+      - Rule Groups
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              required:
+              - Name
+              - Scope
+              - Capacity
+              - VisibilityConfig
+              properties:
+                Name:
+                  type: string
+                Scope:
+                  type: string
+                Capacity:
+                  type: integer
+                Rules:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Rule'
+                VisibilityConfig:
+                  $ref: '#/components/schemas/VisibilityConfig'
+      responses:
+        '200':
+          description: Successful response.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Rule:
+      type: object
+      properties:
+        Name:
+          type: string
+        Priority:
+          type: integer
+        Action:
+          type: object
+        VisibilityConfig:
+          $ref: '#/components/schemas/VisibilityConfig'
+      required:
+      - Name
+      - Priority
+      - VisibilityConfig
+    VisibilityConfig:
+      type: object
+      properties:
+        SampledRequestsEnabled:
+          type: boolean
+        CloudWatchMetricsEnabled:
+          type: boolean
+        MetricName:
+          type: string
+      required:
+      - SampledRequestsEnabled
+      - CloudWatchMetricsEnabled
+      - MetricName
+  securitySchemes:
+    aws_sig_v4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication.
+externalDocs:
+  description: AWS WAF API Reference
+  url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html

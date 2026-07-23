@@ -1,11 +1,7 @@
 openapi: 3.1.0
 info:
-  title: Amazon WAF API
-  description: >-
-    AWS WAF is a web application firewall that helps protect web applications
-    and APIs against common web exploits and bots. The API provides operations
-    for managing web ACLs, rule groups, IP sets, regex pattern sets, and
-    logging configurations.
+  title: Amazon WAF IP Sets Web ACLs API
+  description: AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.
   version: '2019-07-29'
   contact:
     name: Amazon Web Services
@@ -16,9 +12,6 @@ info:
   termsOfService: https://aws.amazon.com/service-terms/
   x-logo:
     url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-externalDocs:
-  description: AWS WAF API Reference
-  url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
 servers:
 - url: https://wafv2.{region}.amazonaws.com
   description: AWS WAF regional endpoint
@@ -39,14 +32,16 @@ servers:
       - ap-southeast-2
       - ap-south-1
       - ca-central-1
+security:
+- aws_sig_v4: []
+tags:
+- name: Web ACLs
 paths:
   /#CreateWebACL:
     post:
       operationId: CreateWebACL
       summary: Amazon WAF Create a Web ACL
-      description: >-
-        Creates a web ACL with the specified rules and default action for
-        managing web traffic.
+      description: Creates a web ACL with the specified rules and default action for managing web traffic.
       tags:
       - Web ACLs
       requestBody:
@@ -153,83 +148,19 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
-  /#CreateIPSet:
-    post:
-      operationId: CreateIPSet
-      summary: Amazon WAF Create an IP Set
-      description: Creates an IP set for use in web ACL rules.
-      tags:
-      - IP Sets
-      requestBody:
-        required: true
-        content:
-          application/x-amz-json-1.1:
-            schema:
-              type: object
-              required:
-              - Name
-              - Scope
-              - IPAddressVersion
-              - Addresses
-              properties:
-                Name:
-                  type: string
-                Scope:
-                  type: string
-                IPAddressVersion:
-                  type: string
-                  enum:
-                  - IPV4
-                  - IPV6
-                Addresses:
-                  type: array
-                  items:
-                    type: string
-      responses:
-        '200':
-          description: Successful response.
-      x-microcks-operation:
-        delay: 0
-        dispatcher: FALLBACK
-  /#CreateRuleGroup:
-    post:
-      operationId: CreateRuleGroup
-      summary: Amazon WAF Create a Rule Group
-      description: Creates a rule group with the specified rules.
-      tags:
-      - Rule Groups
-      requestBody:
-        required: true
-        content:
-          application/x-amz-json-1.1:
-            schema:
-              type: object
-              required:
-              - Name
-              - Scope
-              - Capacity
-              - VisibilityConfig
-              properties:
-                Name:
-                  type: string
-                Scope:
-                  type: string
-                Capacity:
-                  type: integer
-                Rules:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Rule'
-                VisibilityConfig:
-                  $ref: '#/components/schemas/VisibilityConfig'
-      responses:
-        '200':
-          description: Successful response.
-      x-microcks-operation:
-        delay: 0
-        dispatcher: FALLBACK
 components:
   schemas:
+    WebACLSummary:
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: string
+        ARN:
+          type: string
+        LockToken:
+          type: string
     Rule:
       type: object
       properties:
@@ -258,36 +189,12 @@ components:
       - SampledRequestsEnabled
       - CloudWatchMetricsEnabled
       - MetricName
-    WebACLSummary:
-      type: object
-      properties:
-        Name:
-          type: string
-        Id:
-          type: string
-        ARN:
-          type: string
-        LockToken:
-          type: string
-    Tag:
-      type: object
-      properties:
-        Key:
-          type: string
-        Value:
-          type: string
-      required:
-      - Key
-      - Value
   securitySchemes:
     aws_sig_v4:
       type: apiKey
       name: Authorization
       in: header
       description: AWS Signature Version 4 authentication.
-security:
-- aws_sig_v4: []
-tags:
-- name: IP Sets
-- name: Rule Groups
-- name: Web ACLs
+externalDocs:
+  description: AWS WAF API Reference
+  url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
