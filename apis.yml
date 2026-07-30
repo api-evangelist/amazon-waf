@@ -2,57 +2,141 @@ name: Amazon WAF
 description: >-
   AWS WAF is a web application firewall that helps protect web applications and APIs from common web exploits and bots
   that may affect availability, compromise security, or consume excessive resources.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/waf/
 created: '2024-01-15'
 modified: '2026-05-19'
 apis:
-  - name: Amazon WAF REST API
-    description: >-
-      RESTful API for AWS WAF operations including web ACL management, rule groups, IP sets, regex pattern sets, and
-      logging configurations for protecting web applications.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-    humanURL: https://aws.amazon.com/waf/
-    baseURL: https://wafv2.amazonaws.com
-    tags:
-      - AWS
-      - Security
-      - WAF
-      - Web Application Firewall
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/waf/latest/APIReference/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/amazon-waf/refs/heads/main/openapi/amazon-waf-openapi.yml
-      - type: OpenAPI
-        url: https://api.apis.guru/v2/specs/amazonaws.com/wafv2/2019-07-29/openapi.yaml
-      - type: JSONSchema
-        url: json-schema/amazon-waf-web-acl-schema.json
-      - type: JSONLD
-        url: json-ld/amazon-waf-context.jsonld
-      - type: Pricing
-        url: https://aws.amazon.com/waf/pricing/
-      - type: GettingStarted
-        url: https://aws.amazon.com/waf/getting-started/
-      - type: Authentication
-        url: https://docs.aws.amazon.com/waf/latest/APIReference/CommonParameters.html
-      - type: SDKs
-        url: https://aws.amazon.com/tools/
-      - type: StatusPage
-        url: https://status.aws.amazon.com/
-      - type: FAQ
-        url: https://aws.amazon.com/waf/faqs/
-      - type: ServiceLevelAgreement
-        url: https://aws.amazon.com/waf/sla/
-      - type: User Guide
-        url: https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
-      - type: APIReference
-        url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
-      - type: Code Examples
-        url: https://docs.aws.amazon.com/waf/latest/developerguide/waf-examples.html
-      - type: Security
-        url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
+- aid: amazon-waf:amazon-waf-ip-sets-api
+  name: Amazon WAF IP Sets API
+  description: The IP Sets API from Amazon WAF — 1 operation(s) for ip sets.
+  humanURL: https://aws.amazon.com/waf/
+  baseURL: https://wafv2.amazonaws.com
+  tags:
+  - IP Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-waf-ip-sets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/
+  - type: JSONSchema
+    url: json-schema/amazon-waf-web-acl-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-waf-context.jsonld
+  - type: Pricing
+    url: https://aws.amazon.com/waf/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/waf/getting-started/
+  - type: Authentication
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/CommonParameters.html
+  - type: SDKs
+    url: https://aws.amazon.com/tools/
+  - type: StatusPage
+    url: https://status.aws.amazon.com/
+  - type: FAQ
+    url: https://aws.amazon.com/waf/faqs/
+  - type: ServiceLevelAgreement
+    url: https://aws.amazon.com/waf/sla/
+  - type: User Guide
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - type: Code Examples
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/waf-examples.html
+  - type: Security
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
+- aid: amazon-waf:amazon-waf-rule-groups-api
+  name: Amazon WAF Rule Groups API
+  description: The Rule Groups API from Amazon WAF — 1 operation(s) for rule groups.
+  humanURL: https://aws.amazon.com/waf/
+  baseURL: https://wafv2.amazonaws.com
+  tags:
+  - Rule Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-waf-rule-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/
+  - type: JSONSchema
+    url: json-schema/amazon-waf-web-acl-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-waf-context.jsonld
+  - type: Pricing
+    url: https://aws.amazon.com/waf/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/waf/getting-started/
+  - type: Authentication
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/CommonParameters.html
+  - type: SDKs
+    url: https://aws.amazon.com/tools/
+  - type: StatusPage
+    url: https://status.aws.amazon.com/
+  - type: FAQ
+    url: https://aws.amazon.com/waf/faqs/
+  - type: ServiceLevelAgreement
+    url: https://aws.amazon.com/waf/sla/
+  - type: User Guide
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - type: Code Examples
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/waf-examples.html
+  - type: Security
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
+- aid: amazon-waf:amazon-waf-web-acls-api
+  name: Amazon WAF Web ACLs API
+  description: The Web ACLs API from Amazon WAF — 3 operation(s) for web acls.
+  humanURL: https://aws.amazon.com/waf/
+  baseURL: https://wafv2.amazonaws.com
+  tags:
+  - Web ACLs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-waf-web-acls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/
+  - type: JSONSchema
+    url: json-schema/amazon-waf-web-acl-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-waf-context.jsonld
+  - type: Pricing
+    url: https://aws.amazon.com/waf/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/waf/getting-started/
+  - type: Authentication
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/CommonParameters.html
+  - type: SDKs
+    url: https://aws.amazon.com/tools/
+  - type: StatusPage
+    url: https://status.aws.amazon.com/
+  - type: FAQ
+    url: https://aws.amazon.com/waf/faqs/
+  - type: ServiceLevelAgreement
+    url: https://aws.amazon.com/waf/sla/
+  - type: User Guide
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - type: Code Examples
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/waf-examples.html
+  - type: Security
+    url: https://docs.aws.amazon.com/waf/latest/developerguide/security.html
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-waf/overview
   - type: AgenticAccess
     url: agentic-access/amazon-waf-agentic-access.yml
   - type: TrustCenter
