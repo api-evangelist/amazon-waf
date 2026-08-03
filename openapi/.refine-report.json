@@ -1,0 +1,18 @@
+{
+  "provider": "amazon-waf",
+  "sources": [
+    "amazon-waf-ip-sets-api-openapi.yml",
+    "amazon-waf-rule-groups-api-openapi.yml",
+    "amazon-waf-web-acls-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-waf-ip-sets-api-openapi.yml",
+    "amazon-waf-rule-groups-api-openapi.yml",
+    "amazon-waf-web-acls-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,318 @@
+{
+  "info": {
+    "_postman_id": "a005c907-0270-424b-8c39-510cb35f3257",
+    "name": "Amazon WAF IP Sets Web ACLs API",
+    "description": "AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.\n\nContact Support:\n Name: Amazon Web Services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:57:18.000Z",
+    "updatedAt": "2026-07-28T00:57:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a005c907-0270-424b-8c39-510cb35f3257"
+  },
+  "item": [
+    {
+      "name": "#CreateWebACL",
+      "item": [
+        {
+          "name": "Amazon WAF Create a Web ACL",
+          "id": "79bb526e-d1f8-4e2b-8d85-77045d71ee85",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"REGIONAL\",\n  \"DefaultAction\": {\n    \"Allow\": {},\n    \"Block\": {}\n  },\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": \"<boolean>\",\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"MetricName\": \"<string>\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": {}\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": {}\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#CreateWebACL",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "CreateWebACL"
+            },
+            "description": "Creates a web ACL with the specified rules and default action for managing web traffic."
+          },
+          "response": [
+            {
+              "id": "dbd4b3b5-d6b0-47f4-986d-c04ea8be4b7c",
+              "name": "Successful response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"REGIONAL\",\n  \"DefaultAction\": {\n    \"Allow\": {},\n    \"Block\": {}\n  },\n  \"VisibilityConfig\": {\n    \"SampledRequestsEnabled\": \"<boolean>\",\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"MetricName\": \"<string>\"\n  },\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": {}\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Priority\": \"<integer>\",\n      \"VisibilityConfig\": {\n        \"SampledRequestsEnabled\": \"<boolean>\",\n        \"CloudWatchMetricsEnabled\": \"<boolean>\",\n        \"MetricName\": \"<string>\"\n      },\n      \"Action\": {}\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#CreateWebACL",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateWebACL"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Summary\": {\n    \"Name\": \"<string>\",\n    \"Id\": \"<string>\",\n    \"ARN\": \"<string>\",\n    \"LockToken\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T00:57:18.000Z",
+              "updatedAt": "2026-07-28T00:57:18.000Z",
+              "uid": "35240-dbd4b3b5-d6b0-47f4-986d-c04ea8be4b7c"
+            }
+          ],
+          "createdAt": "2026-07-28T00:57:18.000Z",
+          "updatedAt": "2026-07-28T00:57:18.000Z",
+          "uid": "35240-79bb526e-d1f8-4e2b-8d85-77045d71ee85"
+        }
+      ],
+      "id": "84561fce-24c3-4b51-ac0f-b9266de1b867",
+      "createdAt": "2026-07-28T00:57:18.000Z",
+      "updatedAt": "2026-07-28T00:57:18.000Z",
+      "uid": "35240-84561fce-24c3-4b51-ac0f-b9266de1b867"
+    },
+    {
+      "name": "#GetWebACL",
+      "item": [
+        {
+          "name": "Amazon WAF Get a Web ACL",
+          "id": "84871aeb-9165-4319-9046-720107d6c5b0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Id\": \"<string>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#GetWebACL",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "GetWebACL"
+            },
+            "description": "Retrieves the specified web ACL."
+          },
+          "response": [
+            {
+              "id": "0754e6d2-485d-449f-b068-2fb6333f2de2",
+              "name": "Successful response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Scope\": \"<string>\",\n  \"Id\": \"<string>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#GetWebACL",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "GetWebACL"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:57:18.000Z",
+              "updatedAt": "2026-07-28T00:57:18.000Z",
+              "uid": "35240-0754e6d2-485d-449f-b068-2fb6333f2de2"
+            }
+          ],
+          "createdAt": "2026-07-28T00:57:18.000Z",
+          "updatedAt": "2026-07-28T00:57:18.000Z",
+          "uid": "35240-84871aeb-9165-4319-9046-720107d6c5b0"
+        }
+      ],
+      "id": "b4cbe098-54bb-47b6-8d4d-f50983d546f9",
+      "createdAt": "2026-07-28T00:57:18.000Z",
+      "updatedAt": "2026-07-28T00:57:18.000Z",
+      "uid": "35240-b4cbe098-54bb-47b6-8d4d-f50983d546f9"
+    },
+    {
+      "name": "#ListWebACLs",
+      "item": [
+        {
+          "name": "Amazon WAF List Web ACLs",
+          "id": "1f11fff3-f373-42e7-aa4d-3a3f8b36d8a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Scope\": \"<string>\",\n  \"Limit\": \"<integer>\",\n  \"NextMarker\": \"<string>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#ListWebACLs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "ListWebACLs"
+            },
+            "description": "Retrieves a list of web ACLs."
+          },
+          "response": [
+            {
+              "id": "7054b3d0-9fec-48c6-ab69-2beb203e6af6",
+              "name": "Successful response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Scope\": \"<string>\",\n  \"Limit\": \"<integer>\",\n  \"NextMarker\": \"<string>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#ListWebACLs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "ListWebACLs"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:57:18.000Z",
+              "updatedAt": "2026-07-28T00:57:18.000Z",
+              "uid": "35240-7054b3d0-9fec-48c6-ab69-2beb203e6af6"
+            }
+          ],
+          "createdAt": "2026-07-28T00:57:18.000Z",
+          "updatedAt": "2026-07-28T00:57:18.000Z",
+          "uid": "35240-1f11fff3-f373-42e7-aa4d-3a3f8b36d8a3"
+        }
+      ],
+      "id": "32ff3f56-f334-4736-ba8e-4b9d763dd202",
+      "createdAt": "2026-07-28T00:57:18.000Z",
+      "updatedAt": "2026-07-28T00:57:18.000Z",
+      "uid": "35240-32ff3f56-f334-4736-ba8e-4b9d763dd202"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://wafv2.{{region}}.amazonaws.com"
+    }
+  ]
+}
