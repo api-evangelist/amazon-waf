@@ -2,6 +2,7 @@ name: Amazon WAF
 description: >-
   AWS WAF is a web application firewall that helps protect web applications and APIs from common web exploits and bots
   that may affect availability, compromise security, or consume excessive resources.
+specificationVersion: '0.23'
 accessModel:
   pricing: freemium
   onboarding: self-serve
