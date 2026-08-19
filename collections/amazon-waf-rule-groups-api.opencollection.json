@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon WAF IP Sets Rule Groups API",
+    "version": "2019-07-29"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rule Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon WAF Create a Rule Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://wafv2.{region}.amazonaws.com/#CreateRuleGroup",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a rule group with the specified rules."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

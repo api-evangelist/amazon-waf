@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon WAF IP Sets Web ACLs API",
+    "version": "2019-07-29"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Web ACLs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon WAF Create a Web ACL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://wafv2.{region}.amazonaws.com/#CreateWebACL",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a web ACL with the specified rules and default action for managing web traffic."
+        },
+        {
+          "info": {
+            "name": "Amazon WAF Get a Web ACL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://wafv2.{region}.amazonaws.com/#GetWebACL",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves the specified web ACL."
+        },
+        {
+          "info": {
+            "name": "Amazon WAF List Web ACLs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://wafv2.{region}.amazonaws.com/#ListWebACLs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves a list of web ACLs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
