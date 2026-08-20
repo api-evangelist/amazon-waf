@@ -212,6 +212,13 @@ maintainers:
 tags:
   - AWS
   - Bot Management
+  - DDoS Protection
+  - Security
+  - WAF
+  - Web Application Firewall
+tags_raw:
+  - AWS
+  - Bot Management
   - Ddos Protection
   - Security
   - WAF
