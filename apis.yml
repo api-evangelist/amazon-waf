@@ -235,3 +235,5 @@ tags_raw:
   - Security
   - WAF
   - Web Application Firewall
+x-parent: aws
+x-relationship: product
