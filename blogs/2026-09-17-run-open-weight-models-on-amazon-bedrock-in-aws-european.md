@@ -1,0 +1,8 @@
+---
+title: "Run open weight models on Amazon Bedrock in AWS European Sovereign Cloud"
+url: "https://aws.amazon.com/blogs/security/run-open-weight-models-on-aws-bedrock-in-aws-european-sovereign-cloud/"
+date: "2026-09-17"
+author: "Marta Taggart"
+feed_url: "https://aws.amazon.com/blogs/security/feed/"
+---
+European organizations can run AI workloads on Amazon Web Services (AWS) while keeping data within the European Union (EU) and meeting regulatory requirements. You can now run generative AI workloads on open weight models on Amazon Bedrock in the AWS European Sovereign Cloud. We’re excited to announce the general availability of the first open weight […]
