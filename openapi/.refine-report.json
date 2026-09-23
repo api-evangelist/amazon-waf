@@ -1,9 +1,7 @@
 {
   "provider": "amazon-waf",
   "sources": [
-    "amazon-waf-ip-sets-api-openapi.yml",
-    "amazon-waf-rule-groups-api-openapi.yml",
-    "amazon-waf-web-acls-api-openapi.yml"
+    "_original/amazon-waf-openapi.yml"
   ],
   "outputs": [
     "amazon-waf-ip-sets-api-openapi.yml",
@@ -14,10 +12,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "amazon-waf-ip-sets-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "amazon-waf-rule-groups-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "amazon-waf-web-acls-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-waf-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-waf-ip-sets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-waf-rule-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-waf-web-acls-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

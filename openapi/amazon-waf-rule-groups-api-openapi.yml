@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon WAF IP Sets Rule Groups API
+  title: Amazon WAF Rule Groups API
   description: AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.
   version: '2019-07-29'
   contact:
@@ -76,6 +76,19 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    VisibilityConfig:
+      type: object
+      properties:
+        SampledRequestsEnabled:
+          type: boolean
+        CloudWatchMetricsEnabled:
+          type: boolean
+        MetricName:
+          type: string
+      required:
+      - SampledRequestsEnabled
+      - CloudWatchMetricsEnabled
+      - MetricName
     Rule:
       type: object
       properties:
@@ -91,19 +104,6 @@ components:
       - Name
       - Priority
       - VisibilityConfig
-    VisibilityConfig:
-      type: object
-      properties:
-        SampledRequestsEnabled:
-          type: boolean
-        CloudWatchMetricsEnabled:
-          type: boolean
-        MetricName:
-          type: string
-      required:
-      - SampledRequestsEnabled
-      - CloudWatchMetricsEnabled
-      - MetricName
   securitySchemes:
     aws_sig_v4:
       type: apiKey

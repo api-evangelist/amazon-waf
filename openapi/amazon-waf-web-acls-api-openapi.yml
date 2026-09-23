@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon WAF IP Sets Web ACLs API
+  title: Amazon WAF Web ACLs API
   description: AWS WAF is a web application firewall that helps protect web applications and APIs against common web exploits and bots. The API provides operations for managing web ACLs, rule groups, IP sets, regex pattern sets, and logging configurations.
   version: '2019-07-29'
   contact:
@@ -150,21 +150,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Rule:
-      type: object
-      properties:
-        Name:
-          type: string
-        Priority:
-          type: integer
-        Action:
-          type: object
-        VisibilityConfig:
-          $ref: '#/components/schemas/VisibilityConfig'
-      required:
-      - Name
-      - Priority
-      - VisibilityConfig
     VisibilityConfig:
       type: object
       properties:
@@ -189,6 +174,21 @@ components:
           type: string
         LockToken:
           type: string
+    Rule:
+      type: object
+      properties:
+        Name:
+          type: string
+        Priority:
+          type: integer
+        Action:
+          type: object
+        VisibilityConfig:
+          $ref: '#/components/schemas/VisibilityConfig'
+      required:
+      - Name
+      - Priority
+      - VisibilityConfig
   securitySchemes:
     aws_sig_v4:
       type: apiKey
